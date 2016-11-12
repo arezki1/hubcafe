@@ -1,0 +1,55 @@
+@model IEnumerable<HubCafe.Models.Pizza>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+<table class="table table-inverse">
+    <thead id="pizzaForm">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OrderDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Size)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ingredients)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td  class="success">
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td class="danger">
+                @Html.DisplayFor(modelItem => item.OrderDate)
+            </td>
+            <td class="info">
+                @Html.DisplayFor(modelItem => item.Size)
+            </td>
+            <td class="warning">
+                @Html.DisplayFor(modelItem => item.ingredients)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+<img src="~/images/pizza.jpg" height="200" width="420">
