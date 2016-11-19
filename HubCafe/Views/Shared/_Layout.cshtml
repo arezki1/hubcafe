@@ -20,7 +20,7 @@
     </environment>
     @Html.ApplicationInsightsJavaScript(TelemetryConfiguration)
 </head>
-<body>
+<body style="background: linear-gradient(to bottom, #FFE4C4 30%, #FFF8DC 70%);">
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -35,7 +35,6 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
                     <li><a asp-area="" asp-controller="Pizzas" asp-action="Index">Pizzas</a></li>
                     <li><a asp-area="" asp-controller="Pastas" asp-action="Index">Pastas</a></li>
                     <li><a asp-area="" asp-controller="Salads" asp-action="Index">Salads</a></li>
@@ -43,7 +42,7 @@
                     <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
 
                 </ul>
-       
+
                 @await Html.PartialAsync("_LoginPartial")
             </div>
         </div>
@@ -51,14 +50,14 @@
     <div class="container body-content">
         @RenderBody()
 
-        
-      
+
+
         <hr />
         <footer>
             <p>&copy; 2016 - HubCafe<p>
         </footer>
     </div>
-   
+
 
     <environment names="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>
